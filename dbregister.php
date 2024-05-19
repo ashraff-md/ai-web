@@ -27,10 +27,18 @@ $dateOfBirth = $_POST['dateOfBirth'];
 $sql = "INSERT INTO employee (Email, FirstName, LastName, Phone, Salary, Gender, Password, DateOfBirth) VALUES ('$email', '$firstName', '$lastName', '$phone', '$salary', '$gender', '$password', '$dateOfBirth')";
 
 // Execute the query
-if ($conn->query($sql) === TRUE) {
-    echo "Data inserted successfully";
-} else {
-    echo "Error inserting data: " . $conn->error;
+try {
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+} catch (mysqli_sql_exception $e) {
+    if (strpos($e->getMessage(), 'Duplicate entry') !== false) {
+        echo "User Already Exists";
+    } else {
+        echo "Error: " . $e->getMessage();
+    }
 }
 
 // Close the connection
