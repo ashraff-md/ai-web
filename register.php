@@ -5,8 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Register</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png" />
@@ -15,9 +14,7 @@
   <link rel="manifest" href="img/fav/site.webmanifest" />
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
     footer {
@@ -54,8 +51,7 @@
   <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
     <div class="container-fluid">
       <a class="navbar-brand" href><img src="img/fav/favicon-32x32.png" alt="logo" /></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -85,7 +81,7 @@
     <form action="dbregister.php" method="post" class="row g-3">
       <div class="col-md-6">
         <label for="firstName" class="form-label">First Name</label>
-        <input type="text" class="form-control" id="firstName"  name="firstName" required>
+        <input type="text" class="form-control" id="firstName" name="firstName" required>
       </div>
 
       <div class="col-md-6">
@@ -127,24 +123,31 @@
         <button type="submit" class="btn btn-primary">Regiter</button>
       </div>
     </form>
-  </div>
 
+    <?php
+    if (isset($_GET['error'])) {
+      echo('
+      <div class="alert alert-danger mt-3" role="alert">
+      User Already Exists!
+      </div>
+      ');
+    }
+    ?>
+  </div>
+  
   <footer>
     <div class="footer-content">
       <p class="copyright">&copy; 2024 Web Hive. All Rights Reserved.</p>
       <div class="social-icons">
         <a href="https://www.linkedin.com/in/ashraff-md/" target="_blank"><i class="fab fa-linkedin"></i></a>
         <a href="https://www.instagram.com/trexsolutions.co" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/profile.php?id=100008607992961" target="_blank"><i
-            class="fab fa-facebook"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100008607992961" target="_blank"><i class="fab fa-facebook"></i></a>
         <a href="https://wa.me/94767986810" target="_blank"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>

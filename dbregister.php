@@ -29,13 +29,13 @@ $sql = "INSERT INTO employee (Email, FirstName, LastName, Phone, Salary, Gender,
 // Execute the query
 try {
     if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
+        echo header('Location: login.php');
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 } catch (mysqli_sql_exception $e) {
     if (strpos($e->getMessage(), 'Duplicate entry') !== false) {
-        echo "User Already Exists";
+        echo header('Location: register.php?error');
     } else {
         echo "Error: " . $e->getMessage();
     }

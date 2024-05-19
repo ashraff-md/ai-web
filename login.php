@@ -103,8 +103,8 @@
     </div>
       
 
-    <footer class=>
-      <div class="footer-content">
+    <footer>
+      <div class="footer-content mb-0">
         <p class="copyright">&copy; 2024 Web Hive. All Rights Reserved.</p>
         <div class="social-icons">
           <a href="https://www.linkedin.com/in/ashraff-md/" target="_blank"><i class="fab fa-linkedin"></i></a>
