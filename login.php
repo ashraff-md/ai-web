@@ -75,12 +75,12 @@
 
     <div class="container-md mt-5 mb-5 p-3 bg-light text-dark rounded" style="max-width: 400px;">
         <h2 class="fw-bolder" style="text-align: center;">Login</h2>
-        <form class="row g-3">
+        <form class="row g-3" action="dblogin.php" method="POST">
             <div class="col-12">
                 <label for="inputEmail" class="form-label">Email</label>
                 <div class="input-group">
                     <span class="input-group-text"><i class="fa-solid fa-user"></i></span>
-                    <input type="email" class="form-control" id="inputEmail">
+                    <input type="email" name="email" class="form-control" id="inputEmail">
                 </div>
                 <a href="#" class="float-end">Forgot email?</a>
             </div>
@@ -88,7 +88,7 @@
                 <label for="inputPassword" class="form-label">Password</label>
                 <div class="input-group">
                     <span class="input-group-text"><i class="fas fa-lock"></i></span>
-                    <input type="password" class="form-control" id="inputPassword">
+                    <input type="password" name="password" class="form-control" id="inputPassword">
                 </div>
                 <a href="#" class="float-end">Forgot password?</a>
             </div>
